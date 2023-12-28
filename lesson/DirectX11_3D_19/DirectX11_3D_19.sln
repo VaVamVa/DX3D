@@ -1,0 +1,39 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.34031.81
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Game", "Game\Game.vcxproj", "{6277F3B5-C081-46FF-9DB3-CB352AFE70AE}"
+	ProjectSection(ProjectDependencies) = postProject
+		{B1E1DA90-D39A-40AF-B9A1-0BB72829A721} = {B1E1DA90-D39A-40AF-B9A1-0BB72829A721}
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Framework", "Framework\Framework.vcxproj", "{B1E1DA90-D39A-40AF-B9A1-0BB72829A721}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "_Shaders", "_Shaders", "{D2D6BE3E-162A-4958-88EE-5F2F9BC877D0}"
+	ProjectSection(SolutionItems) = preProject
+		_Shaders\01_Vertex.fx = _Shaders\01_Vertex.fx
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x86 = Debug|x86
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{6277F3B5-C081-46FF-9DB3-CB352AFE70AE}.Debug|x86.ActiveCfg = Debug|Win32
+		{6277F3B5-C081-46FF-9DB3-CB352AFE70AE}.Debug|x86.Build.0 = Debug|Win32
+		{6277F3B5-C081-46FF-9DB3-CB352AFE70AE}.Release|x86.ActiveCfg = Release|Win32
+		{6277F3B5-C081-46FF-9DB3-CB352AFE70AE}.Release|x86.Build.0 = Release|Win32
+		{B1E1DA90-D39A-40AF-B9A1-0BB72829A721}.Debug|x86.ActiveCfg = Debug|Win32
+		{B1E1DA90-D39A-40AF-B9A1-0BB72829A721}.Debug|x86.Build.0 = Debug|Win32
+		{B1E1DA90-D39A-40AF-B9A1-0BB72829A721}.Release|x86.ActiveCfg = Release|Win32
+		{B1E1DA90-D39A-40AF-B9A1-0BB72829A721}.Release|x86.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {526721D5-925F-44C0-8C10-8090C74928FB}
+	EndGlobalSection
+EndGlobal
