@@ -5,6 +5,8 @@
 #### Framework
 
 framework windows 플랫폼 => `x32(x86)`
+- [DX3D_Framework](https://github.com/VaVamVa/DX3D/tree/main/lesson/DirectX11_3D_19)
+    - [content_diff](https://github.com/VaVamVa/DX3D/commit/e661cea4d94be84ec221893db3fce17c49edb6ff)
 
 1. Framework 솔루션
     - lib 파일 생성용
@@ -28,6 +30,8 @@ IA->VS->RS->PS->OM
     1. 앞의 물체와 뒤의 물체를 직육면체 절두체로 만든 후
     2. 사각뿔 형태의 절두체에 depth 값에 따라 배치.(?)
 
+- Vertex : 정점. 여러가지 정보를 담을 수 있다.
+
 #### Rasterizer State
 1. viewport 설정 (window 창)
 2. viewport 규모에 맞춰서 pixel 단위로 바꿔줌.
@@ -41,6 +45,14 @@ IA->VS->RS->PS->OM
 2. 앞의 모든 과정을 화면에 출력시키는 일
 3. swap chain이 여기서 일어남.
 
-#### Shader
-GPU에서 이용할 함수.
+#### 추가 용어
+
+1. Shader : GPU에서 이용할 함수.
+2. Buffer : CPU에서 data를 담아 GPU로 보내는 역할
+3. `ID3D~~~~` vs `D3D~~~~` : interface 형태로 존재하는가.
+    - interface 형태로 존재하면, 참조받아서 사용해야 한다.
+    - 직접 메모리해제를 해주는게 아닌, `Release` 함수로 해제해야 한다.
+    - 
+
+
 

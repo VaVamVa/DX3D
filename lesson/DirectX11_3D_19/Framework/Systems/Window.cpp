@@ -77,17 +77,17 @@ WPARAM Window::Run(IExecute* main)
 {
 	mainExecute = main;
 
-	Graphics::Create();
-	Mouse::Create();
-	Keyboard::Create();
+	Graphics::Create();  // direct x Init
+	Mouse::Create();  // singleton
+	Keyboard::Create();  // singleton
 
-	Time::Create();
+	Time::Create();  // singleton
 	Time::Get()->Start();
 
 	GUI::Create();
 	Context::Create();
 
-	mainExecute->Initialize();
+	mainExecute->Initialize();  // 선생님이 만든 인터페이스. 각 게임에서 받아서 쓰면, update, render 등의 동작을 수행해준다.
 
 	MSG msg = { 0 };
 	while (true)
@@ -165,7 +165,7 @@ void Window::MainRender()
 	}
 
 	GUI::Get()->Update();
-	Context::Get()->Update();
+	Context::Get()->Update();  // viewport, projection 관리
 	mainExecute->Update();
 
 	mainExecute->PreRender();

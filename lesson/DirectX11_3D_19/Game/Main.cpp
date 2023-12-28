@@ -76,7 +76,7 @@ int WINAPI WinMain(HINSTANCE instance, HINSTANCE prevInstance, LPSTR param, int 
 
 	Main* main = new Main();
 	Window* window = new Window(desc);
-	WPARAM wParam = window->Run(main);
+	WPARAM wParam = window->Run(main);  // 무한 반복
 
 	SAFE_DELETE(window);
 	SAFE_DELETE(main);

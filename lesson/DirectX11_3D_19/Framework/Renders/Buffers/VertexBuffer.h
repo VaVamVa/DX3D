@@ -27,32 +27,32 @@ private:
 template<typename T>
 inline void VertexBuffer::Create(const vector<T>& vertices, const D3D11_USAGE& usage)
 {
-	stride = sizeof(T);
-	count = vertices.size();
+	stride = sizeof(T);  // Vertex buffer의 크기
+	count = vertices.size();  // Vertex buffers의 개수
 
-	D3D11_BUFFER_DESC desc;
+	D3D11_BUFFER_DESC desc;  // 견적서
 	ZeroMem(desc);
 
 	desc.Usage = usage;
-	desc.BindFlags = D3D11_BIND_VERTEX_BUFFER;
-	desc.ByteWidth = stride * count;
+	desc.BindFlags = D3D11_BIND_VERTEX_BUFFER;  // 용도
+	desc.ByteWidth = stride * count;  // 총 메모리 크기. VRAM에서 확보할 공간
 
 	switch (usage)
 	{
 		case D3D11_USAGE_DEFAULT:
-		case D3D11_USAGE_IMMUTABLE:
+		case D3D11_USAGE_IMMUTABLE:  // CPU에 접근 자체를 막음
 			break;
 
-		case D3D11_USAGE_DYNAMIC:
+		case D3D11_USAGE_DYNAMIC:  // Runtime 중에 CPU에서 데이터 조작
 			desc.CPUAccessFlags = D3D11_CPU_ACCESS_WRITE;
 			break;
 
-		case D3D11_USAGE_STAGING:
+		case D3D11_USAGE_STAGING:  // 
 			desc.CPUAccessFlags = D3D11_CPU_ACCESS_WRITE | D3D11_CPU_ACCESS_READ;
 			break;
 	}
 
-	D3D11_SUBRESOURCE_DATA sub = { 0 };	// 안에 포인터 변수가 있으면 ZeroMemory
+	D3D11_SUBRESOURCE_DATA sub = { 0 };	// 안에 포인터 변수가 있으면 ZeroMemory (쓰레기값 방지)
 	sub.pSysMem = vertices.data();		// 실제로 그릴 데이터의 시작 주소
 
 	HRESULT hr = DEVICE->CreateBuffer(&desc, &sub, &buffer);
