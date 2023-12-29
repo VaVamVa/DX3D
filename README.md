@@ -25,4 +25,4 @@
 3. Index Buffer를 이용한 Vertex 수 줄이기
     - 최적화
 
-- [content_diff]()
+- [content_diff](https://github.com/VaVamVa/DX3D/commit/8c6f7a9fcd728711caabed01476bcf2a4c3256d5)
