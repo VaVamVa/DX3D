@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 16
-VisualStudioVersion = 16.0.34031.81
+# Visual Studio Version 17
+VisualStudioVersion = 17.4.33213.308
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Game", "Game\Game.vcxproj", "{6277F3B5-C081-46FF-9DB3-CB352AFE70AE}"
 	ProjectSection(ProjectDependencies) = postProject
@@ -13,6 +13,8 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "_Shaders", "_Shaders", "{D2D6BE3E-162A-4958-88EE-5F2F9BC877D0}"
 	ProjectSection(SolutionItems) = preProject
 		_Shaders\01_Vertex.fx = _Shaders\01_Vertex.fx
+		_Shaders\02_Triangle.fx = _Shaders\02_Triangle.fx
+		_Shaders\03_World.fx = _Shaders\03_World.fx
 	EndProjectSection
 EndProject
 Global

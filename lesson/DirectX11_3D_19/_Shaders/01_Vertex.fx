@@ -3,7 +3,7 @@ struct VertexInput
     float4 Position : Position;
 };
 
-struct VertexOutput
+struct VertexOutput  // NDC 좌표계 기준으로 값 받음.
 {
     float4 Position : SV_Position;
 };
@@ -31,6 +31,8 @@ float4 PS3(VertexOutput input) : SV_Target
     return float4(0, 0, 1, 1);
 }
 
+// Shader 내부에서 효과를 세분화해서 나누기 위해.
+// Shader::Draw 함수의 첫번째 인자
 technique11 T0
 {
     pass P0

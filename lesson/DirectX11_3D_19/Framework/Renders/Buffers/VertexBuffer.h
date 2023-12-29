@@ -3,10 +3,9 @@
 class VertexBuffer
 {
 public:
-	~VertexBuffer();
-
 	template<typename T>
-	void Create(const vector<T>& vertices, const D3D11_USAGE& usage = D3D11_USAGE_DEFAULT);
+	VertexBuffer(const vector<T>& vertices, const D3D11_USAGE& usage = D3D11_USAGE_DEFAULT);
+	~VertexBuffer();
 
 	ID3D11Buffer* GetBuffer() { return buffer; }
 
@@ -20,21 +19,22 @@ private:
 	ID3D11Buffer* buffer = nullptr;
 
 	uint stride = 0;
-	uint offset = 0;
+	uint offset = 0;  
 	uint count = 0;
 };
 
 template<typename T>
-inline void VertexBuffer::Create(const vector<T>& vertices, const D3D11_USAGE& usage)
+inline VertexBuffer::VertexBuffer(const vector<T>& vertices, const D3D11_USAGE& usage)
 {
 	stride = sizeof(T);  // Vertex buffer의 크기
 	count = vertices.size();  // Vertex buffers의 개수
+	// offset : stirde * count(한 메모리 구역) 내에서 특정 속성만 읽고 싶을때.
 
 	D3D11_BUFFER_DESC desc;  // 견적서
 	ZeroMem(desc);
 
-	desc.Usage = usage;
-	desc.BindFlags = D3D11_BIND_VERTEX_BUFFER;  // 용도
+	desc.Usage = usage;  // cpu에서 사용할 수 있는지
+	desc.BindFlags = D3D11_BIND_VERTEX_BUFFER;  // 사용할 목적
 	desc.ByteWidth = stride * count;  // 총 메모리 크기. VRAM에서 확보할 공간
 
 	switch (usage)

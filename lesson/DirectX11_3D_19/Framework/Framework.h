@@ -87,6 +87,7 @@ typedef INT64 int64;
 #include "Renders/Context.h"
 
 #include "Renders/Buffers/VertexBuffer.h"
+#include "Renders/Buffers/IndexBuffer.h"
 
 #include "Utilities/Math.h"
 #include "Utilities/String.h"

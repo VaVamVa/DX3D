@@ -13,6 +13,13 @@ public:
 
 	ID3DX11Effect* Effect() { return effect; }
 
+	/*
+	hlsl vs fx : hlsl 조금 업그레이드 - fx (dx3d effect file)
+	technique : Shader에서 어떤 효과를 줄 것인지(technique + slot(num))
+	pass : Shader::tchique slot 에서 몇 번째 pass를 이용할 것인지.
+	vertexCount : 찍을 vertex 갯수
+	startVertexLocation : 몇 번째 vertex 부터 찍을 건지.
+	*/
 	void Draw(UINT technique, UINT pass, UINT vertexCount, UINT startVertexLocation = 0);
 	void DrawIndexed(UINT technique, UINT pass, UINT indexCount, UINT startIndexLocation = 0, INT baseVertexLocation = 0);
 	void DrawInstanced(UINT technique, UINT pass, UINT vertexCountPerInstance, UINT instanceCount, UINT startVertexLocation = 0, UINT startInstanceLocation = 0);

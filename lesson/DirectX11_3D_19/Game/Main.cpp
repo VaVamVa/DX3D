@@ -3,12 +3,18 @@
 #include "Systems/Window.h"
 
 #pragma region include Demo
-
+#include "Demo/Local/01_VertexLine.h"
+#include "Demo/Local/02_TriangleList.h"
+#include "Demo/World/01_WolrdDemo.h"
+#include "Demo/World/02_IndexBufferDemo.h"
 #pragma endregion
 
 void Main::Initialize()
 {
-	
+	//Push(new TriangleList);
+	//Push(new VertexLine);
+	//Push(new WorldDemo);
+	Push(new IndexBufferDemo);
 }
 
 void Main::Ready()

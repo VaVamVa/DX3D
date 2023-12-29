@@ -18,8 +18,11 @@
 
 ## 1. 231229
 
-[231229_](docu/)
+[231229_Draw](docu/231229_Draw.md)
 
-1. 
+1. 선과 면 그리기
+2. NDC 좌표계와 World 좌표계
+3. Index Buffer를 이용한 Vertex 수 줄이기
+    - 최적화
 
 - [content_diff]()

@@ -8,5 +8,6 @@ VertexBuffer::~VertexBuffer()
 
 void VertexBuffer::SetIA()
 {
+	// buffer의 내용을 IA(GPU)로 전달
 	DEVICE_CONTEXT->IASetVertexBuffers(0, 1, &buffer, &stride, &offset);
 }
