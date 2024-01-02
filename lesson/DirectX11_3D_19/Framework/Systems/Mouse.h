@@ -41,6 +41,7 @@ private:
 	ULONGLONG startDblClk[MAX_INPUT_MOUSE];
 	int buttonCount[MAX_INPUT_MOUSE];
 
+public:
 	enum
 	{
 		MOUSE_INPUT_LBUTTON = 0,

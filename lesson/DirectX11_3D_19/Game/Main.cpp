@@ -7,6 +7,7 @@
 #include "Demo/Local/02_TriangleList.h"
 #include "Demo/World/01_WolrdDemo.h"
 #include "Demo/World/02_IndexBufferDemo.h"
+#include "Demo/World/03_GridDemo.h"
 #pragma endregion
 
 void Main::Initialize()
@@ -14,7 +15,8 @@ void Main::Initialize()
 	//Push(new TriangleList);
 	//Push(new VertexLine);
 	//Push(new WorldDemo);
-	Push(new IndexBufferDemo);
+	//Push(new IndexBufferDemo);
+	Push(new GridDemo);
 }
 
 void Main::Ready()

@@ -80,6 +80,8 @@ typedef INT64 int64;
 
 #include "View/Projection.h"
 #include "View/Viewport.h"
+#include "View/Camera.h"
+#include "View/Freedom.h"
 
 #include "Renders/Shader.h"
 #include "Renders/Texture.h"
@@ -95,3 +97,7 @@ typedef INT64 int64;
 
 
 extern HWND handle;
+
+#define VIEW Context::Get()->View()
+#define PROJECTION Context::Get()->GetProjectionMatrix()
+#define TRIANGLE_LIST DEVICE_CONTEXT->IASetPrimitiveTopology(D3D11_PRIMITIVE_TOPOLOGY_TRIANGLELIST)

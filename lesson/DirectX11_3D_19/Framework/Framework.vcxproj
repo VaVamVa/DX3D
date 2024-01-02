@@ -169,6 +169,8 @@
     <ClInclude Include="Utilities\Singleton.h" />
     <ClInclude Include="Utilities\String.h" />
     <ClInclude Include="Utilities\Xml.h" />
+    <ClInclude Include="View\Camera.h" />
+    <ClInclude Include="View\Freedom.h" />
     <ClInclude Include="View\Projection.h" />
     <ClInclude Include="View\Viewport.h" />
   </ItemGroup>
@@ -190,6 +192,8 @@
     <ClCompile Include="Utilities\Path.cpp" />
     <ClCompile Include="Utilities\String.cpp" />
     <ClCompile Include="Utilities\Xml.cpp" />
+    <ClCompile Include="View\Camera.cpp" />
+    <ClCompile Include="View\Freedom.cpp" />
     <ClCompile Include="View\Projection.cpp" />
     <ClCompile Include="View\Viewport.cpp" />
   </ItemGroup>

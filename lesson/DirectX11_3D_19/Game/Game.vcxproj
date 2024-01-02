@@ -150,6 +150,7 @@
     <ClCompile Include="Demo\Local\02_TriangleList.cpp" />
     <ClCompile Include="Demo\World\01_WolrdDemo.cpp" />
     <ClCompile Include="Demo\World\02_IndexBufferDemo.cpp" />
+    <ClCompile Include="Demo\World\03_GridDemo.cpp" />
     <ClCompile Include="Main.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -157,6 +158,7 @@
     <ClInclude Include="Demo\Local\02_TriangleList.h" />
     <ClInclude Include="Demo\World\01_WolrdDemo.h" />
     <ClInclude Include="Demo\World\02_IndexBufferDemo.h" />
+    <ClInclude Include="Demo\World\03_GridDemo.h" />
     <ClInclude Include="Main.h" />
     <ClInclude Include="stdafx.h" />
   </ItemGroup>

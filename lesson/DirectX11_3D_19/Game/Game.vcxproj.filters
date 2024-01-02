@@ -30,6 +30,9 @@
     <ClCompile Include="Demo\World\02_IndexBufferDemo.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
+    <ClCompile Include="Demo\World\03_GridDemo.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Main.h">
@@ -48,6 +51,9 @@
       <Filter>헤더 파일</Filter>
     </ClInclude>
     <ClInclude Include="Demo\World\02_IndexBufferDemo.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="Demo\World\03_GridDemo.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
   </ItemGroup>

@@ -37,6 +37,11 @@ float4 PS_B(VertexOutput input) : SV_Target
     return float4(0, 0, 1, 1);
 }
 
+RasterizerState FillMode_WireFrame
+{
+    FillMode = WireFrame;
+};
+
 // Shader 내부에서 효과를 세분화해서 나누기 위해.
 // Shader::Draw 함수의 첫번째 인자
 technique11 T0
@@ -49,6 +54,8 @@ technique11 T0
 
     pass P1
     {
+        SetRasterizerState(FillMode_WireFrame);
+
         SetVertexShader(CompileShader(vs_5_0, VS()));
         SetPixelShader(CompileShader(ps_5_0, PS_G()));
     }

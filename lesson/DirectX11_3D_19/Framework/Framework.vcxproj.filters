@@ -81,6 +81,12 @@
     <ClInclude Include="Renders\Buffers\IndexBuffer.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
+    <ClInclude Include="View\Camera.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="View\Freedom.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Framework.cpp">
@@ -138,6 +144,12 @@
       <Filter>소스 파일</Filter>
     </ClCompile>
     <ClCompile Include="Renders\Buffers\IndexBuffer.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="View\Camera.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="View\Freedom.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
   </ItemGroup>
