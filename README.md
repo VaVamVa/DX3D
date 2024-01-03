@@ -31,7 +31,8 @@
 
 ## 3. 240102
 
-[240102_Draw](docu/240102_Draw2.md)
+
+[240102_Draw2](docu/240102_Draw2.md)
 
 1. grid 그리기
 2. Camera 생성
