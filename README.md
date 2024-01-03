@@ -65,7 +65,7 @@
     - [Demo/Mesh/01_CubeDemo.cpp](https://github.com/VaVamVa/DX3D/blob/main/lesson/DirectX11_3D_19/Game/Demo/Mesh/01_CubeDemo.cpp)
 <br>
 
-- [content_diff]()
+- [content_diff](https://github.com/VaVamVa/DX3D/commit/a68ead6679e67be69ec26eac6e3821416140dd83)
 
 <br>
 
