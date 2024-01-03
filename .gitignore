@@ -32,10 +32,10 @@ mono_crash.*
 [Dd]ebugPublic/
 [Rr]elease/
 [Rr]eleases/
-!*/_Libraries/Lib/x64/*
 x64/
 !*/_Libraries/Lib/x86/*
 x86/
+!*/_Libraries/Lib/x86/*
 [Ww][Ii][Nn]32/
 [Aa][Rr][Mm]/
 [Aa][Rr][Mm]64/

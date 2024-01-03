@@ -16,7 +16,7 @@
 
 <br>
 
-## 1. 231229
+## 2. 231229
 
 [231229_Draw](docu/231229_Draw.md)
 
@@ -26,3 +26,18 @@
     - 최적화
 
 - [content_diff](https://github.com/VaVamVa/DX3D/commit/8c6f7a9fcd728711caabed01476bcf2a4c3256d5)
+
+<br>
+
+## 3. 240102
+
+[231229_Draw](docu/240102_Draw2.md)
+
+1. grid 그리기
+2. Camera 생성
+
+- [content_diff](https://github.com/VaVamVa/DX3D/commit/c8b696304621a38546c341fd181ea44befd43bbe)
+
+<br>
+
+## 4. 240103
