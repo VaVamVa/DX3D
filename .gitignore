@@ -33,9 +33,11 @@ mono_crash.*
 [Rr]elease/
 [Rr]eleases/
 x64/
-!*/_Libraries/Lib/x86/*
+!*/_Libraries/Lib/x64/*
+!*/Libraries/Lib/x64/*
 x86/
 !*/_Libraries/Lib/x86/*
+!*/Libraries/Lib/x86/*
 [Ww][Ii][Nn]32/
 [Aa][Rr][Mm]/
 [Aa][Rr][Mm]64/
