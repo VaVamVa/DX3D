@@ -33,6 +33,18 @@
     <ClCompile Include="Demo\World\03_GridDemo.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
+    <ClCompile Include="Demo\Texture\01_TextureDemo.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="Demo\Texture\02_TextureSamplerDemo.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="Demo\Texture\03_TextureLoadDemo.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="Demo\Mesh\01_CubeDemo.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Main.h">
@@ -54,6 +66,18 @@
       <Filter>헤더 파일</Filter>
     </ClInclude>
     <ClInclude Include="Demo\World\03_GridDemo.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="Demo\Texture\01_TextureDemo.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="Demo\Texture\02_TextureSamplerDemo.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="Demo\Texture\03_TextureLoadDemo.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="Demo\Mesh\01_CubeDemo.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
   </ItemGroup>

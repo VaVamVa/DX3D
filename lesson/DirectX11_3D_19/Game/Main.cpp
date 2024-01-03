@@ -8,6 +8,12 @@
 #include "Demo/World/01_WolrdDemo.h"
 #include "Demo/World/02_IndexBufferDemo.h"
 #include "Demo/World/03_GridDemo.h"
+
+#include "Demo/Texture/01_TextureDemo.h"
+#include "Demo/Texture/02_TextureSamplerDemo.h"
+#include "Demo/Texture/03_TextureLoadDemo.h"
+
+#include "Demo/Mesh/01_CubeDemo.h"
 #pragma endregion
 
 void Main::Initialize()
@@ -16,7 +22,12 @@ void Main::Initialize()
 	//Push(new VertexLine);
 	//Push(new WorldDemo);
 	//Push(new IndexBufferDemo);
-	Push(new GridDemo);
+	//Push(new GridDemo);
+	//Push(new TextureDemo);
+	//Push(new TextureSamplerDemo);
+	//Push(new TextureLoadDemo);
+	Push(new CubeDemo);
+
 }
 
 void Main::Ready()

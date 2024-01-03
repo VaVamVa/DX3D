@@ -31,7 +31,7 @@
 
 ## 3. 240102
 
-[231229_Draw](docu/240102_Draw2.md)
+[240102_Draw](docu/240102_Draw2.md)
 
 1. grid 그리기
 2. Camera 생성
@@ -41,3 +41,16 @@
 <br>
 
 ## 4. 240103
+
+### [240103_Texture](docu/240103_Texture.md)
+1. srv를 이용해 Texutre 정보 Shader로 보내기
+2. uv 비율을 이용하여 Texture 그림 축소, 확대, 자르기
+3. uv 비율에 대한 색 보간 `SamplerState`의 `filter`와 `address`이용하여 처리하기
+4. Texture load 객체화
+
+### [240103_Cube](docu/240103_Cube.md)
+1. 정육면체 cube 그리기
+
+### 과제
+1. 그림 4개로 잘라서 완전한 그림 만들기
+2. Cube 상하 전후 좌우 움직이게 하기 (world buffer 이용)
