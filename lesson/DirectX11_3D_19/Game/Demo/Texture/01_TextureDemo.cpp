@@ -8,19 +8,17 @@ void TextureDemo::Initialize()
 	shader = new Shader(L"04_Texture.fx");
 
 	vertices.assign(4, VertexTexture());
-	vb.resize(4);
 
-
-	/*
-	* 실습 : 비워진 부분 어떻게 채워지는가.
-	*/
-	// 1. 왼쪽 위 그림
 	vertices[0].Position = Vector3(-0.5f, -0.5f, 0.0f);  // 좌하
 	vertices[1].Position = Vector3(-0.5f, 0.5f, 0.0f);  // 좌상
 	vertices[2].Position = Vector3(0.5f, 0.5f, 0.0f);  // 우상
 	vertices[3].Position = Vector3(0.5f, -0.5f, 0.0f);  // 우하
 
+	vb.resize(4);
+
 	// UV : Texture에서 사용하는 "비율" 좌표계 (좌상단 0,0 / 우하단 1,1)
+	/*
+	* 실습 : 비워진 부분 어떻게 채워지는가. (축소)
 	vertices[0].Uv = Vector2(0, 2.0f); // 좌하
 	vertices[1].Uv = Vector2(0, 0); // 좌상
 	vertices[2].Uv = Vector2(2.0f, 0); // 우상
@@ -29,11 +27,6 @@ void TextureDemo::Initialize()
 	vb[0] = new VertexBuffer(vertices);
 
 	// 2. 오른쪽 위 그림
-	vertices[0].Position = Vector3(-0.5f, -0.5f, 0.0f);  // 좌하
-	vertices[1].Position = Vector3(-0.5f, 0.5f, 0.0f);  // 좌상
-	vertices[2].Position = Vector3(0.5f, 0.5f, 0.0f);  // 우상
-	vertices[3].Position = Vector3(0.5f, -0.5f, 0.0f);  // 우하
-
 	vertices[0].Uv = Vector2(-1.0f, 2.0f); // 좌하
 	vertices[1].Uv = Vector2(-1.0f, 0); // 좌상
 	vertices[2].Uv = Vector2(1.0f, 0); // 우상
@@ -42,11 +35,6 @@ void TextureDemo::Initialize()
 	vb[1] = new VertexBuffer(vertices);
 
 	// 3. 왼쪽 아래 그림
-	vertices[0].Position = Vector3(-0.5f, -0.5f, 0.0f);  // 좌하
-	vertices[1].Position = Vector3(-0.5f, 0.5f, 0.0f);  // 좌상
-	vertices[2].Position = Vector3(0.5f, 0.5f, 0.0f);  // 우상
-	vertices[3].Position = Vector3(0.5f, -0.5f, 0.0f);  // 우하
-
 	vertices[0].Uv = Vector2(0, 1.0f); // 좌하
 	vertices[1].Uv = Vector2(0, -1.0f); // 좌상
 	vertices[2].Uv = Vector2(2.0f, -1.0f); // 우상
@@ -55,14 +43,43 @@ void TextureDemo::Initialize()
 	vb[2] = new VertexBuffer(vertices);
 
 	// 4. 왼쪽 아래 그림
-	vertices[0].Position = Vector3(-0.5f, -0.5f, 0.0f);  // 좌하
-	vertices[1].Position = Vector3(-0.5f, 0.5f, 0.0f);  // 좌상
-	vertices[2].Position = Vector3(0.5f, 0.5f, 0.0f);  // 우상
-	vertices[3].Position = Vector3(0.5f, -0.5f, 0.0f);  // 우하
-
 	vertices[0].Uv = Vector2(-1.0f, 1.0f); // 좌하
 	vertices[1].Uv = Vector2(-1.0f, -1.0f); // 좌상
 	vertices[2].Uv = Vector2(1.0f, -1.0f); // 우상
+	vertices[3].Uv = Vector2(1.0f, 1.0f); // 우하
+
+	vb[3] = new VertexBuffer(vertices);
+	*/
+
+	// 과제 : 잘라서 온전한 그림으로 붙이기 (자르기)
+	// 1. 왼쪽 위 그림
+	vertices[0].Uv = Vector2(0, 0.5f); // 좌하
+	vertices[1].Uv = Vector2(0, 0); // 좌상
+	vertices[2].Uv = Vector2(0.5f, 0); // 우상
+	vertices[3].Uv = Vector2(0.5f, 0.5f); // 우하
+
+	vb[0] = new VertexBuffer(vertices);
+
+	// 2. 오른쪽 위 그림
+	vertices[0].Uv = Vector2(0.5f, 0.5f); // 좌하
+	vertices[1].Uv = Vector2(0.5f, 0); // 좌상
+	vertices[2].Uv = Vector2(1.0f, 0); // 우상
+	vertices[3].Uv = Vector2(1.0f, 0.5f); // 우하
+
+	vb[1] = new VertexBuffer(vertices);
+
+	// 3. 왼쪽 아래 그림
+	vertices[0].Uv = Vector2(0, 1.0f); // 좌하
+	vertices[1].Uv = Vector2(0, 0.5f); // 좌상
+	vertices[2].Uv = Vector2(0.5f, 0.5f); // 우상
+	vertices[3].Uv = Vector2(0.5f, 1.0f); // 우하
+
+	vb[2] = new VertexBuffer(vertices);
+
+	// 4. 왼쪽 아래 그림
+	vertices[0].Uv = Vector2(0.5f, 1.0f); // 좌하
+	vertices[1].Uv = Vector2(0.5f, 0.5f); // 좌상
+	vertices[2].Uv = Vector2(1.0f, 0.5f); // 우상
 	vertices[3].Uv = Vector2(1.0f, 1.0f); // 우하
 
 	vb[3] = new VertexBuffer(vertices);

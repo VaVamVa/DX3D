@@ -3,6 +3,8 @@
 
 void CubeDemo::Initialize()
 {
+	CAMERA->SetPosition(0, 0, -10.0f);
+
 	shader = new Shader(L"06_Cube.fx");
 
 	float width = 0.5f, height = 0.5f, depth = 0.5f;
@@ -72,6 +74,35 @@ void CubeDemo::Destroy()
 
 void CubeDemo::Update()
 {
+	if (Mouse::Get()->Press(Mouse::MOUSE_INPUT_RBUTTON) == true) return;
+
+	float speed = 3.0f * Time::Delta();
+
+	if (Keyboard::Get()->Press('W'))
+	{
+		world._42 += speed;
+	}
+	if (Keyboard::Get()->Press('S'))
+	{
+		world._42 -= speed;
+	}
+	if (Keyboard::Get()->Press('D'))
+	{
+		world._41 += speed;
+	}
+	if (Keyboard::Get()->Press('A'))
+	{
+		world._41 -= speed;
+	}
+
+	if (Keyboard::Get()->Press(VK_SPACE))
+	{
+		world._43 += speed;
+	}
+	if (Keyboard::Get()->Press(VK_CONTROL))
+	{
+		world._43 -= speed;
+	}
 }
 
 void CubeDemo::Render()
@@ -85,5 +116,5 @@ void CubeDemo::Render()
 	ib->SetIA();
 	TRIANGLE_LIST;
 
-	shader->DrawIndexed(0, 1, indices.size());
+	shader->DrawIndexed(0, 0, indices.size());
 }
