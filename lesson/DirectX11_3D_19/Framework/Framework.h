@@ -95,6 +95,7 @@ typedef INT64 int64;
 #include "Utilities/String.h"
 #include "Utilities/Path.h"
 
+#include "Meshes/Mesh.h"
 
 extern HWND handle;
 

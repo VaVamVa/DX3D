@@ -4,10 +4,6 @@
 
 1. `Sampler State`를 이용하여 `Texture`의 `Pixel` 값을 뽑아 uv 비율에 맞게 Render 한다.
 2. `Sampler State`는 `Texture`의 확대와 축소에서 오는 색의 보간을 담당한다.
-	1. 축소 확대로 인한 색 보간 : `Filter`
-		- `Point`, `Linear`
-	2. 비율의 변경으로 인해 남는 부분의 색 보간 : `Address`
-		- `Wrap`, `Mirror`, `Clamp`, `Border`
 
 3. `ID3D11ShaderResourceView*`로 인터페이스 이용.
     - `shader->AsSRV("Map")->SetResource(srv);`로 쉐이더에 전달
@@ -23,9 +19,9 @@
 
 2. 텍스쳐는 어떠한 경우는 "좌상단(0, 0) ~ 우하단(1, 1)" 으로 그리게 된다.
 
-3. `1`의 uv 값을 변경함으로서 텍스쳐의 형태를 바꿀 수 있다.
+3. `1`의 uv 값(비율)을 변경함으로서 텍스쳐의 형태를 바꿀 수 있다.
 	1. 축소
-	2. 확대
+	2. 확대 (무조건적인 자르기 수반)
 	3. 자르기
 
 
@@ -35,6 +31,11 @@
 
 ## 3. 색 보간으로 sampler state 이용하기
 uv 비율에 대한 색 보간 `SamplerState`의 `filter`와 `address`이용하여 처리하기
+
+1. 축소 확대로 인한 색 보간 : `Filter`
+		- `Point`, `Linear`
+2. 비율의 변경으로 인해 남는 부분의 색 보간 : `Address`
+    - `Wrap`, `Mirror`, `Clamp`, `Border`
 
 ### 1. Filter
 scale의 변화로 오는 pixel 사이의 빈 부분 색 보간

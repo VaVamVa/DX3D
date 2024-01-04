@@ -78,31 +78,72 @@ void CubeDemo::Update()
 
 	float speed = 3.0f * Time::Delta();
 
-	if (Keyboard::Get()->Press('W'))
+	Vector3 right = Vector3(world._11, world._12, world._13);
+	Vector3 up = Vector3(world._21, world._22, world._23);
+	Vector3 front = Vector3(world._31, world._32, world._33);
+
+
+	// Rotation
+	if (Keyboard::Get()->Press(VK_SHIFT))
 	{
-		world._42 += speed;
+		if (Keyboard::Get()->Press('W'))
+			rotation.x += speed;
+		if (Keyboard::Get()->Press('S'))
+			rotation.x -= speed;
+
+		if (Keyboard::Get()->Press('D'))
+			rotation.y += speed;
+		if (Keyboard::Get()->Press('A'))
+			rotation.y -= speed;
+
+		if (Keyboard::Get()->Press(VK_SPACE))
+			rotation.z += speed;
+		if (Keyboard::Get()->Press(VK_CONTROL))
+			rotation.z -= speed;
 	}
-	if (Keyboard::Get()->Press('S'))
+	// Scale
+	else if (Keyboard::Get()->Press(VK_BACK))
 	{
-		world._42 -= speed;
+		if (Keyboard::Get()->Press('W'))
+			scale.z += speed;
+		if (Keyboard::Get()->Press('S'))
+			scale.z -= speed;
+
+		if (Keyboard::Get()->Press('D'))
+			scale.x += speed;
+		if (Keyboard::Get()->Press('A'))
+			scale.x -= speed;
+
+		if (Keyboard::Get()->Press(VK_SPACE))
+			scale.y += speed;
+		if (Keyboard::Get()->Press(VK_CONTROL))
+			scale.y -= speed;
 	}
-	if (Keyboard::Get()->Press('D'))
+	// Translation
+	else
 	{
-		world._41 += speed;
-	}
-	if (Keyboard::Get()->Press('A'))
-	{
-		world._41 -= speed;
+		if (Keyboard::Get()->Press('W'))
+			position += front * speed;
+		if (Keyboard::Get()->Press('S'))
+			position -= front * speed;
+		
+		if (Keyboard::Get()->Press('D'))
+			position += right * speed;
+		if (Keyboard::Get()->Press('A'))
+			position -= right * speed;
+		
+		if (Keyboard::Get()->Press(VK_SPACE))
+			position += up * speed;
+		if (Keyboard::Get()->Press(VK_CONTROL))
+			position -= up * speed;
 	}
 
-	if (Keyboard::Get()->Press(VK_SPACE))
-	{
-		world._43 += speed;
-	}
-	if (Keyboard::Get()->Press(VK_CONTROL))
-	{
-		world._43 -= speed;
-	}
+
+	Matrix S, R, T;
+	D3DXMatrixScaling(&S, scale.x, scale.y, scale.z);
+	D3DXMatrixRotationYawPitchRoll(&R, rotation.y, rotation.x, rotation.z);
+	D3DXMatrixTranslation(&T, position.x, position.y, position.z);
+	world = S * R * T;
 }
 
 void CubeDemo::Render()
