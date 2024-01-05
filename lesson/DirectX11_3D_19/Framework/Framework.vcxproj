@@ -150,7 +150,11 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="Framework.h" />
+    <ClInclude Include="Meshes\Cube.h" />
+    <ClInclude Include="Meshes\Grid.h" />
     <ClInclude Include="Meshes\Mesh.h" />
+    <ClInclude Include="Meshes\Quad.h" />
+    <ClInclude Include="Meshes\Sphere.h" />
     <ClInclude Include="Renders\Buffers\IndexBuffer.h" />
     <ClInclude Include="Renders\Buffers\VertexBuffer.h" />
     <ClInclude Include="Renders\Context.h" />
@@ -177,7 +181,11 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Framework.cpp" />
+    <ClCompile Include="Meshes\Cube.cpp" />
+    <ClCompile Include="Meshes\Grid.cpp" />
     <ClCompile Include="Meshes\Mesh.cpp" />
+    <ClCompile Include="Meshes\Quad.cpp" />
+    <ClCompile Include="Meshes\Sphere.cpp" />
     <ClCompile Include="Renders\Buffers\IndexBuffer.cpp" />
     <ClCompile Include="Renders\Buffers\VertexBuffer.cpp" />
     <ClCompile Include="Renders\Context.cpp" />

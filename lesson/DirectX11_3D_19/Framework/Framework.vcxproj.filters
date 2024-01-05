@@ -90,6 +90,18 @@
     <ClInclude Include="Meshes\Mesh.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
+    <ClInclude Include="Meshes\Quad.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="Meshes\Cube.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="Meshes\Grid.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="Meshes\Sphere.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Framework.cpp">
@@ -156,6 +168,18 @@
       <Filter>소스 파일</Filter>
     </ClCompile>
     <ClCompile Include="Meshes\Mesh.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="Meshes\Quad.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="Meshes\Cube.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="Meshes\Grid.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="Meshes\Sphere.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
   </ItemGroup>

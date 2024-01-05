@@ -96,6 +96,10 @@ typedef INT64 int64;
 #include "Utilities/Path.h"
 
 #include "Meshes/Mesh.h"
+#include "Meshes/Quad.h"
+#include "Meshes/Cube.h"
+#include "Meshes/Grid.h"
+#include "Meshes/Sphere.h"
 
 extern HWND handle;
 

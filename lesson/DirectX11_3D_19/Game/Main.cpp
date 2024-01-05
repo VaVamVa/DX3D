@@ -17,7 +17,7 @@
 #include "Demo/Texture/03_TextureLoadDemo.h"
 
 #include "Demo/Mesh/01_CubeDemo.h"
-#include "Demo/Mesh/02_.h"
+#include "Demo/Mesh/02_MeshDemo.h"
 #pragma endregion
 
 void Main::Initialize()
@@ -32,8 +32,8 @@ void Main::Initialize()
 	Push(new TextureSamplerDemo);
 	Push(new TextureLoadDemo);
 	*/
-	Push(new CubeDemo);
-	//Push(new Demo);
+	//Push(new CubeDemo);
+	Push(new MeshDemo);
 }
 
 void Main::Ready()

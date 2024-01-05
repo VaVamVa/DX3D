@@ -84,5 +84,21 @@
 
 - [content_diff](https://github.com/VaVamVa/DX3D/commit/6075e291e7e3db08d961917d9e26a09bf37225e6)
 
+<br>
+
+
 ## 6. 240105
 
+#### [240105_Meshes](docu/240105_Meshes.md)
+도형들 그리기
+1. Quad
+2. Cube
+3. Grid
+4. Sphere
+
+- [content_diff]()
+
+### 과제
+1. 지구를 `cube`기준으로 공전시키기
+2. 지구를 23.5도 기울려서 공전시키고 자전시키기
+3. 태양계 만들기

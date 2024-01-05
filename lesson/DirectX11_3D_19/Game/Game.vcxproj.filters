@@ -45,7 +45,7 @@
     <ClCompile Include="Demo\Mesh\01_CubeDemo.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
-    <ClCompile Include="Demo\Mesh\02_.cpp">
+    <ClCompile Include="Demo\Mesh\02_MeshDemo.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
   </ItemGroup>
@@ -83,7 +83,7 @@
     <ClInclude Include="Demo\Mesh\01_CubeDemo.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
-    <ClInclude Include="Demo\Mesh\02_.h">
+    <ClInclude Include="Demo\Mesh\02_MeshDemo.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
   </ItemGroup>
