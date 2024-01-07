@@ -91,14 +91,23 @@
 
 #### [240105_Meshes](docu/240105_Meshes.md)
 도형들 그리기
-1. Quad
-2. Cube
-3. Grid
-4. Sphere
+1. Quad : 2차원 사각형
+2. Cube : 3차원 육면체
+3. Grid : 2차원 타일 (정사각형의 정사각 그룹)
+4. Sphere : 3차원 구
 
-- [content_diff]()
+- [content_diff](https://github.com/VaVamVa/DX3D/commit/e0ebfbe555cd90ba47ec0732e59987c94b36e509)
 
 ### 과제
 1. 지구를 `cube`기준으로 공전시키기
 2. 지구를 23.5도 기울려서 공전시키고 자전시키기
+    - [02_MeshDemo.cpp](https://github.com/VaVamVa/DX3D/blob/main/lesson/DirectX11_3D_19/Game/Demo/Mesh/02_MeshDemo.cpp)
 3. 태양계 만들기
+    - [02_SolarSystemHW.cpp](https://github.com/VaVamVa/DX3D/blob/main/lesson/DirectX11_3D_19/Game/HW/Mesh/02_SolarSystemHW.cpp)
+
+- [content_diff]()
+
+<br>
+
+
+## 7. 240106

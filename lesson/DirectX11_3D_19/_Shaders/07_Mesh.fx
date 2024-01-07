@@ -44,11 +44,22 @@ SamplerState LinearSampler
 float4 PS(VertexOutput input) : SV_Target
 {
     float3 normal = normalize(input.Normal);
-    float3 light = -LightDirection;
+    /*
+    모든 ray tracing 에서 normarlize 해줌.
+    만약 light direction을 정규화해서 넘겨주고 있다는 확신이 있다면,
+    Shader 보단 CPU에서 정규화 해주는 것이 연산량을 줄일 수 있음.
+    */
+    float3 light = -normalize(LightDirection);
     
-    float NdotL = saturate(dot(normal, light)) + 0.2f;
+    float NdotL = saturate(dot(normal, light)) + 0.05f;
     
     return DiffuseMap.Sample(LinearSampler, input.Uv) * NdotL;
+}
+
+float4 PS_Pure(VertexOutput input) : SV_Target
+{
+    return DiffuseMap.Sample(LinearSampler, input.Uv);
+
 }
 
 
@@ -73,5 +84,11 @@ technique11 T0
 
         SetVertexShader(CompileShader(vs_5_0, VS()));
         SetPixelShader(CompileShader(ps_5_0, PS()));
+    }
+
+    pass P2
+    {
+        SetVertexShader(CompileShader(vs_5_0, VS()));
+        SetPixelShader(CompileShader(ps_5_0, PS_Pure()));
     }
 }

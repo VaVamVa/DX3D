@@ -156,6 +156,7 @@
     <ClCompile Include="Demo\World\01_WolrdDemo.cpp" />
     <ClCompile Include="Demo\World\02_IndexBufferDemo.cpp" />
     <ClCompile Include="Demo\World\03_GridDemo.cpp" />
+    <ClCompile Include="HW\Mesh\02_SolarSystemHW.cpp" />
     <ClCompile Include="Main.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -169,6 +170,7 @@
     <ClInclude Include="Demo\World\01_WolrdDemo.h" />
     <ClInclude Include="Demo\World\02_IndexBufferDemo.h" />
     <ClInclude Include="Demo\World\03_GridDemo.h" />
+    <ClInclude Include="HW\Mesh\02_SolarSystemHW.h" />
     <ClInclude Include="Main.h" />
     <ClInclude Include="stdafx.h" />
   </ItemGroup>

@@ -18,6 +18,7 @@
 
 #include "Demo/Mesh/01_CubeDemo.h"
 #include "Demo/Mesh/02_MeshDemo.h"
+#include "HW/Mesh/02_SolarSystemHW.h"
 #pragma endregion
 
 void Main::Initialize()
@@ -33,7 +34,8 @@ void Main::Initialize()
 	Push(new TextureLoadDemo);
 	*/
 	//Push(new CubeDemo);
-	Push(new MeshDemo);
+	//Push(new MeshDemo);
+	Push(new SolarSystemHW);
 }
 
 void Main::Ready()

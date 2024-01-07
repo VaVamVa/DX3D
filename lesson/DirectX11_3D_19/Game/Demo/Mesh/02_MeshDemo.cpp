@@ -26,9 +26,13 @@ void MeshDemo::Initialize()
 	grid->SetScale(9, 1, 9);
 
 	sphere = new Sphere(shader, 1);
-	sphere->SetDiffuseMap(L"../_Textures/earth.jpg");
+	sphere->SetDiffuseMap(L"../_Textures/SolarSystem/earth.jpg");
 	sphere->SetPosition(0, 10.0f, 0);
 	sphere->SetScale(5, 5, 5);
+	sphere->SetRotationDegree(0, 23.44f, 23.44f);
+
+	Vector3 diffVect = sphere->GetPosition() - cube->GetPosition();
+	revolution = D3DXVec3Length(&diffVect);
 }
 
 void MeshDemo::Destroy()
@@ -47,6 +51,14 @@ void MeshDemo::Update()
 	cube->Update();
 	grid->Update();
 	sphere->Update();
+
+	time += Time::Delta();
+
+	sphere->SetPosition(sinf(time) * revolution + cube->GetPosition().x, cosf(time) * revolution + cube->GetPosition().y, cube->GetPosition().z);
+
+	if (time >= Math::PI * 2) time -= Math::PI * 2;
+
+	sphere->SetRotation(0, time, 0);
 }
 
 void MeshDemo::Render()

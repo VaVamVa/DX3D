@@ -97,6 +97,7 @@ void Camera::Rotation()
 	D3DXVec3TransformNormal(&this->up, &up, &matRotation);
 	D3DXVec3TransformNormal(&this->right, &right, &matRotation);
 
+	UpdateViewMatrix();
 }
 
 void Camera::Move()
