@@ -100,14 +100,14 @@
 
 ### 과제
 1. 지구를 `cube`기준으로 공전시키기
-2. 지구를 23.5도 기울려서 공전시키고 자전시키기
+2. 지구를 23.5도 기울려서 자전시키고 공전시키기
     - [02_MeshDemo.cpp](https://github.com/VaVamVa/DX3D/blob/main/lesson/DirectX11_3D_19/Game/Demo/Mesh/02_MeshDemo.cpp)
 3. 태양계 만들기
     - [02_SolarSystemHW.cpp](https://github.com/VaVamVa/DX3D/blob/main/lesson/DirectX11_3D_19/Game/HW/Mesh/02_SolarSystemHW.cpp)
 
-- [content_diff]()
+- [content_diff](https://github.com/VaVamVa/DX3D/commit/3b6a201ad3327af1178dfb08936a8c5a2ddfafe6)
 
 <br>
 
 
-## 7. 240106
+## 7. 240108

@@ -15,7 +15,7 @@
 
 1. 기본 형태는 아래와 같다.
 
-![NDC&UV_coord](/docu_images/NDC_UV_coord.png)
+![NDC&UV_coord](./docu_images/NDC_UV_coord.png)
 
 2. 텍스쳐는 어떠한 경우는 "좌상단(0, 0) ~ 우하단(1, 1)" 으로 그리게 된다.
 
