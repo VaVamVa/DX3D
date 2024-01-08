@@ -31,6 +31,10 @@ void MeshDemo::Initialize()
 	sphere->SetScale(5, 5, 5);
 	sphere->SetRotationDegree(0, 23.44f, 23.44f);
 
+	cylinder = new Cylinder(shader, 5.0f, 10.0f, 10.0f, 20, 20);
+	cylinder->SetDiffuseMap(L"../_Textures/tree_body.jpg");
+	cylinder->SetPosition(-20.0f, 6.0f, -15.0f);
+
 	Vector3 diffVect = sphere->GetPosition() - cube->GetPosition();
 	revolution = D3DXVec3Length(&diffVect);
 }
@@ -41,6 +45,7 @@ void MeshDemo::Destroy()
 	SAFE_DELETE(cube);
 	SAFE_DELETE(grid);
 	SAFE_DELETE(sphere);
+	SAFE_DELETE(cylinder);
 
 	SAFE_DELETE(shader);
 }
@@ -51,6 +56,7 @@ void MeshDemo::Update()
 	cube->Update();
 	grid->Update();
 	sphere->Update();
+	cylinder->Update();
 
 	time += Time::Delta();
 
@@ -70,4 +76,5 @@ void MeshDemo::Render()
 	cube->Render();
 	grid->Render();
 	sphere->Render();
+	cylinder->Render();
 }

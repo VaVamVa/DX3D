@@ -51,6 +51,9 @@
     <ClCompile Include="HW\Mesh\02_SolarSystemHW.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
+    <ClCompile Include="Demo\Task\SolarSystem.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Main.h">
@@ -90,6 +93,9 @@
       <Filter>헤더 파일</Filter>
     </ClInclude>
     <ClInclude Include="HW\Mesh\02_SolarSystemHW.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="Demo\Task\SolarSystem.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
   </ItemGroup>

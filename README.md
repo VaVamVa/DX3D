@@ -111,3 +111,13 @@
 
 
 ## 7. 240108
+
+#### [240105_HW_SolarSystem](https://github.com/VaVamVa/DX3D/blob/main/lesson/DirectX11_3D_19/Game/Demo/Task/SolarSystem.h)
+
+`240105` 태양계 그리기 과제 같이 풀어보기
+
+#### [240108_Meshes](docu/240105_Meshes.md)
+
+1. Cylinder : 3차원 원기둥 
+
+- [content_diff]()

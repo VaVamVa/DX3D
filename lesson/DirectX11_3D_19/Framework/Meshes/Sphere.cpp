@@ -68,7 +68,7 @@ void Sphere::Create()
 	for (uint i = 0; i < sliceStep; i++)
 	{
 		indices.push_back(southPoleIndex);
-		indices.push_back(southPoleIndex + i);
-		indices.push_back(southPoleIndex + i + 1);
+		indices.push_back(baseIndex + i);
+		indices.push_back(baseIndex + i + 1);
 	}
 }

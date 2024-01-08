@@ -47,6 +47,17 @@ void Mesh::Render()
 	shader->DrawIndexed(0, pass, indices.size());
 }
 
+void Mesh::SetShader(Shader* shader)
+{
+	this->shader = shader;
+
+	sWorld = this->shader->AsMatrix("World");
+	sView = this->shader->AsMatrix("View");
+	sProjection = this->shader->AsMatrix("Projection");
+
+	sDiffuseMap = this->shader->AsSRV("DiffuseMap");
+}
+
 void Mesh::SetPosition(Vector3 pos)
 {
 	position = pos;
@@ -78,6 +89,17 @@ void Mesh::SetRotationDegree(Vector3 rot)
 void Mesh::SetRotationDegree(float x, float y, float z)
 {
 	SetRotationDegree(Vector3(x, y, z));
+}
+
+void Mesh::MulRoationMatrix(Matrix mulR)
+{
+	Matrix S, R, T;
+
+	D3DXMatrixScaling(&S, scale.x, scale.y, scale.z);
+	D3DXMatrixRotationYawPitchRoll(&R, rotation.y, rotation.x, rotation.z);
+	D3DXMatrixTranslation(&T, position.x, position.y, position.z);
+
+	world = S * R * mulR * T;
 }
 
 void Mesh::SetScale(Vector3 size)

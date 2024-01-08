@@ -24,6 +24,7 @@ private:
 	Cube* cube;
 	Grid* grid;
 	Sphere* sphere;
+	Cylinder* cylinder;
 
 	float revolution = 0.0f;
 	float time = 0.0f;

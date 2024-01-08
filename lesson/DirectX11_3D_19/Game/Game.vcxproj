@@ -150,6 +150,7 @@
     <ClCompile Include="Demo\Local\02_TriangleList.cpp" />
     <ClCompile Include="Demo\Mesh\01_CubeDemo.cpp" />
     <ClCompile Include="Demo\Mesh\02_MeshDemo.cpp" />
+    <ClCompile Include="Demo\Task\SolarSystem.cpp" />
     <ClCompile Include="Demo\Texture\01_TextureDemo.cpp" />
     <ClCompile Include="Demo\Texture\02_TextureSamplerDemo.cpp" />
     <ClCompile Include="Demo\Texture\03_TextureLoadDemo.cpp" />
@@ -164,6 +165,7 @@
     <ClInclude Include="Demo\Local\02_TriangleList.h" />
     <ClInclude Include="Demo\Mesh\01_CubeDemo.h" />
     <ClInclude Include="Demo\Mesh\02_MeshDemo.h" />
+    <ClInclude Include="Demo\Task\SolarSystem.h" />
     <ClInclude Include="Demo\Texture\01_TextureDemo.h" />
     <ClInclude Include="Demo\Texture\02_TextureSamplerDemo.h" />
     <ClInclude Include="Demo\Texture\03_TextureLoadDemo.h" />

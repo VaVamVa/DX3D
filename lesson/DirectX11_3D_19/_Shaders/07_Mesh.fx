@@ -51,6 +51,7 @@ float4 PS(VertexOutput input) : SV_Target
     */
     float3 light = -normalize(LightDirection);
     
+    // saturate : Clamp 같은 역할의 함수
     float NdotL = saturate(dot(normal, light)) + 0.05f;
     
     return DiffuseMap.Sample(LinearSampler, input.Uv) * NdotL;

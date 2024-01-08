@@ -43,5 +43,4 @@ private:
 	float rotationFactor = 1.0f;
 
 	string target = "Free";
-	set<string> targetable;
 };

@@ -1,12 +1,15 @@
 #include "stdafx.h"
 #include "02_SolarSystemHW.h"
 
+#include <fstream>
+
 void SolarSystemHW::Initialize()
 {
 	shader = new Shader(L"07_Mesh.fx");
 	sLightDirection = shader->AsVector("LightDirection");
 
-	targetable.insert("Free");
+	planetsAttributes.insert({ "Free", vector<float>()});
+
 	CreateStars();
 }
 
@@ -16,6 +19,7 @@ void SolarSystemHW::Destroy()
 	for (pair<string, Sphere*> planet : planets)
 		SAFE_DELETE(planet.second);
 	planets.clear();
+	SAFE_DELETE(shader);
 }
 
 void SolarSystemHW::Update()
@@ -30,13 +34,19 @@ void SolarSystemHW::Update()
 
 		for (pair<string, Sphere*> planet : planets)
 		{
-			planet.second->Update();
 			planet.second->SetPosition(
 				cosf(time * revolutionFactor / planetsAttributes[planet.first][REVOLUTION]) * planetsAttributes[planet.first][AU] * distanceFactor + sun->GetPosition().x,
 				sun->GetPosition().y,
 				sinf(time * revolutionFactor / planetsAttributes[planet.first][REVOLUTION]) * planetsAttributes[planet.first][AU] * distanceFactor + sun->GetPosition().z
 			);
-			planet.second->SetRotation(0, time * rotationFactor * planetsAttributes[planet.first][ROTATION], planetsAttributes[planet.first][SLOPE]);
+
+			Matrix axisM;
+			Vector3 axis = planet.second->GetUpVector();
+			float rotationValue = time * rotationFactor * planetsAttributes[planet.first][ROTATION];
+			D3DXMatrixRotationAxis(&axisM, &axis, rotationValue);
+
+			planet.second->MulRoationMatrix(axisM);
+			planet.second->Update();
 		}
 	}
 
@@ -75,10 +85,10 @@ void SolarSystemHW::Render()
 	ImGui::SliderFloat("Rotation factor", &rotationFactor, 0.0f, 2.0f);
 	ImGui::SliderFloat("Revolution factor", &revolutionFactor, 0.0f, 200.0f);
 	ImGui::SliderFloat("AU distance", &distanceFactor, 0.0f, 100.0f);
-	for (set<string>::iterator iter = targetable.begin(); iter != targetable.end(); iter++)
-		if (ImGui::Selectable(iter->c_str(), iter->c_str() == target))
+	for (unordered_map<string, vector<float>>::iterator iter = planetsAttributes.begin(); iter != planetsAttributes.end(); iter++)
+		if (ImGui::Selectable(iter->first.c_str(), iter->first.c_str() == target))
 		{
-			target = iter->c_str();
+			target = iter->first.c_str();
 		}
 	
 }
@@ -126,7 +136,6 @@ void SolarSystemHW::CreateStars()
 		name_w.assign(name.begin(), name.end());
 
 		planetsAttributes[name] = attributes;
-		targetable.insert(name);
 
 		if (name == "sun")
 		{
@@ -143,6 +152,7 @@ void SolarSystemHW::CreateStars()
 			planets[name] = new Sphere(shader, attributes[RADIUS], 30, 30);
 			planets[name]->SetDiffuseMap(L"../_Textures/SolarSystem/" + name_w + L".jpg");
 			planets[name]->SetPosition(sun->GetPosition().x + attributes[AU] * distanceFactor, sun->GetPosition().y, sun->GetPosition().z);
+			planets[name]->SetRotation(0, 0, attributes[SLOPE]);
 		}
 	}
 

@@ -151,6 +151,7 @@
   <ItemGroup>
     <ClInclude Include="Framework.h" />
     <ClInclude Include="Meshes\Cube.h" />
+    <ClInclude Include="Meshes\Cylinder.h" />
     <ClInclude Include="Meshes\Grid.h" />
     <ClInclude Include="Meshes\Mesh.h" />
     <ClInclude Include="Meshes\Quad.h" />
@@ -182,6 +183,7 @@
   <ItemGroup>
     <ClCompile Include="Framework.cpp" />
     <ClCompile Include="Meshes\Cube.cpp" />
+    <ClCompile Include="Meshes\Cylinder.cpp" />
     <ClCompile Include="Meshes\Grid.cpp" />
     <ClCompile Include="Meshes\Mesh.cpp" />
     <ClCompile Include="Meshes\Quad.cpp" />

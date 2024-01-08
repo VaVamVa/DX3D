@@ -13,6 +13,7 @@ public:
 	void Render();
 
 public:
+	void SetShader(Shader* shader);
 	void SetPass(uint value) { pass = value; }
 
 	void SetPosition(Vector3 pos);
@@ -27,11 +28,13 @@ public:
 	void SetRotationDegree(float x, float y, float z);
 	Vector3 GetRotationDegree() { return rotation * Math::PI / 180.0f; }
 
+	void MulRoationMatrix(Matrix mulR);
+
 	void SetScale(Vector3 size);
 	void SetScale(float x, float y, float z);
 	Vector3 GetScale() { return scale; }
 
-	Matrix GetWorld() { return world; }
+	Matrix& GetWorld() { return world; }
 
 	Vector3 GetForwardVector() { return Vector3(world._31, world._32, world._33); }
 	Vector3 GetUpVector() { return Vector3(world._21, world._22, world._23); }

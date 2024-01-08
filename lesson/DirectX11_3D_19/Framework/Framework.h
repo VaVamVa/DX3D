@@ -7,15 +7,12 @@
 #include <string>
 #include <vector>
 #include <list>
-#include <set>
 #include <map>
 #include <unordered_map>
 #include <functional>
 #include <iterator>
 #include <thread>
 #include <mutex>
-
-#include <fstream>
 
 using namespace std;
 
@@ -104,6 +101,7 @@ typedef INT64 int64;
 #include "Meshes/Cube.h"
 #include "Meshes/Grid.h"
 #include "Meshes/Sphere.h"
+#include "Meshes/Cylinder.h"
 
 extern HWND handle;
 
