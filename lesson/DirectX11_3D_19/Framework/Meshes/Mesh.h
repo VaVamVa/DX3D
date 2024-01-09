@@ -28,7 +28,7 @@ public:
 	void SetRotationDegree(float x, float y, float z);
 	Vector3 GetRotationDegree() { return rotation * Math::PI / 180.0f; }
 
-	void MulRoationMatrix(Matrix mulR);
+	void MulAxisRoation(Vector3 *pAxis, float rotationAngleSpeed);
 
 	void SetScale(Vector3 size);
 	void SetScale(float x, float y, float z);

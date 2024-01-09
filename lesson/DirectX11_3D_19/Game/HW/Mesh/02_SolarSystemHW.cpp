@@ -26,11 +26,14 @@ void SolarSystemHW::Update()
 {
 	time += Time::Delta();
 
-	sun->Update();
 
-	// Planets Rotation
+	// Planets Revolve, Rotate
 	{
-		sun->SetRotation(0, time * rotationFactor * planetsAttributes["sun"][ROTATION], 0);
+		// 행성들은 괜찮은데 자네는 어찌 이리 도나..
+		Vector3 axis = sun->GetUpVector();
+		float rotationValue = time * rotationFactor * planetsAttributes["sun"][ROTATION];
+		sun->MulAxisRoation(&axis, rotationValue);
+		sun->Update();
 
 		for (pair<string, Sphere*> planet : planets)
 		{
@@ -40,12 +43,10 @@ void SolarSystemHW::Update()
 				sinf(time * revolutionFactor / planetsAttributes[planet.first][REVOLUTION]) * planetsAttributes[planet.first][AU] * distanceFactor + sun->GetPosition().z
 			);
 
-			Matrix axisM;
-			Vector3 axis = planet.second->GetUpVector();
-			float rotationValue = time * rotationFactor * planetsAttributes[planet.first][ROTATION];
-			D3DXMatrixRotationAxis(&axisM, &axis, rotationValue);
+			axis = planet.second->GetUpVector();
+			rotationValue = time * rotationFactor * planetsAttributes[planet.first][ROTATION];
 
-			planet.second->MulRoationMatrix(axisM);
+			planet.second->MulAxisRoation(&axis, rotationValue);
 			planet.second->Update();
 		}
 	}
@@ -54,8 +55,9 @@ void SolarSystemHW::Update()
 	{
 		if (target == "sun")
 		{
-			CAMERA->SetPosition(sun->GetPosition().x, sun->GetPosition().y + 30.0f, sun->GetPosition().z - 100.0f);
-			CAMERA->SetRotation(2 * tanf(abs(CAMERA->GetPosition().z / CAMERA->GetPosition().y)), 0, 0);
+			float dy = 20.0f, dz = 50.0f;
+			CAMERA->SetPosition(sun->GetPosition().x, sun->GetPosition().y + dy, sun->GetPosition().z - dz);
+			CAMERA->SetRotation(Math::PI * 0.5f - atan2f(dz, dy), 0, 0);
 		}
 		else if (target != "Free")
 		{
@@ -82,14 +84,25 @@ void SolarSystemHW::Render()
 		planet.second->Render();
 	}
 
-	ImGui::SliderFloat("Rotation factor", &rotationFactor, 0.0f, 2.0f);
-	ImGui::SliderFloat("Revolution factor", &revolutionFactor, 0.0f, 200.0f);
-	ImGui::SliderFloat("AU distance", &distanceFactor, 0.0f, 100.0f);
-	for (unordered_map<string, vector<float>>::iterator iter = planetsAttributes.begin(); iter != planetsAttributes.end(); iter++)
-		if (ImGui::Selectable(iter->first.c_str(), iter->first.c_str() == target))
-		{
-			target = iter->first.c_str();
-		}
+	if (ImGui::TreeNode("Control Planets Attributes"))
+	{
+		ImGui::SliderFloat("Rotation factor", &rotationFactor, 0.0f, 2.0f);
+		ImGui::SliderFloat("Revolution factor", &revolutionFactor, 0.0f, 200.0f);
+		ImGui::SliderFloat("AU distance", &distanceFactor, 0.0f, 100.0f);
+
+		ImGui::TreePop();
+	}
+
+	if (ImGui::TreeNode("Camera"))
+	{
+		for (unordered_map<string, vector<float>>::iterator iter = planetsAttributes.begin(); iter != planetsAttributes.end(); iter++)
+			if (ImGui::Selectable(iter->first.c_str(), iter->first.c_str() == target))
+			{
+				target = iter->first.c_str();
+			}
+
+		ImGui::TreePop();
+	}
 	
 }
 
@@ -131,7 +144,7 @@ void SolarSystemHW::CreateStars()
 		file >> name 
 			>> attributes[AU] >> attributes[RADIUS] 
 			>> attributes[SLOPE] >> attributes[ROTATION] >> attributes[REVOLUTION];
-		attributes[SLOPE] *= Math::PI / 180.0f;
+		//attributes[SLOPE] *= Math::PI / 180.0f;
 		wstring name_w;
 		name_w.assign(name.begin(), name.end());
 
@@ -139,22 +152,26 @@ void SolarSystemHW::CreateStars()
 
 		if (name == "sun")
 		{
-			sun = new Sphere(shader, attributes[RADIUS], 30, 30);
+			sun = new Sphere(shader, attributes[RADIUS]);
 			sun->SetDiffuseMap(L"../_Textures/SolarSystem/" + name_w + L".jpg");
-
-			CAMERA->SetPosition(sun->GetPosition().x, sun->GetPosition().y + 30.0f, sun->GetPosition().z - 100.0f);
-			// cotan(Cam) = tan(1 / (abs(CamPos.y / CamPos.z)))
-			CAMERA->SetRotation(2 * tanf(abs(CAMERA->GetPosition().z / CAMERA->GetPosition().y)), 0, 0);
+			sun->SetRotationDegree(0, 0, attributes[SLOPE]);
+			
 			sun->SetPass(2);
 		}
 		else
 		{
-			planets[name] = new Sphere(shader, attributes[RADIUS], 30, 30);
+			planets[name] = new Sphere(shader, attributes[RADIUS]);
 			planets[name]->SetDiffuseMap(L"../_Textures/SolarSystem/" + name_w + L".jpg");
 			planets[name]->SetPosition(sun->GetPosition().x + attributes[AU] * distanceFactor, sun->GetPosition().y, sun->GetPosition().z);
-			planets[name]->SetRotation(0, 0, attributes[SLOPE]);
+			planets[name]->SetRotationDegree(0, 0, attributes[SLOPE]);
 		}
 	}
+
+	float dy = 20.0f, dz = 50.0f;
+	CAMERA->SetPosition(sun->GetPosition().x, sun->GetPosition().y + dy, sun->GetPosition().z - dz);
+	// arctan = tan(1 / (CamPos.y / CamPos.z))
+	// CamMovingAngle = Pi / 2 - arctan2(CamPos.z, CamPos.y)
+	CAMERA->SetRotation(Math::PI * 0.5f - atan2f(dz, dy), 0, 0);
 
 	file.close();
 }

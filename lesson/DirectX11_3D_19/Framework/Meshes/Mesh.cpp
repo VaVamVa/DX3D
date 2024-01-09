@@ -91,15 +91,18 @@ void Mesh::SetRotationDegree(float x, float y, float z)
 	SetRotationDegree(Vector3(x, y, z));
 }
 
-void Mesh::MulRoationMatrix(Matrix mulR)
+void Mesh::MulAxisRoation(Vector3 *pAxis, float rotationAngleSpeed)
 {
+	Matrix axisR;
 	Matrix S, R, T;
+
+	D3DXMatrixRotationAxis(&axisR, pAxis, rotationAngleSpeed);
 
 	D3DXMatrixScaling(&S, scale.x, scale.y, scale.z);
 	D3DXMatrixRotationYawPitchRoll(&R, rotation.y, rotation.x, rotation.z);
 	D3DXMatrixTranslation(&T, position.x, position.y, position.z);
 
-	world = S * R * mulR * T;
+	world = S * R * axisR * T;
 }
 
 void Mesh::SetScale(Vector3 size)
