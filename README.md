@@ -127,10 +127,10 @@
 
 ## 8. 240109
 
-#### [240109](docu/240109_HeightMap.md)
+#### [240109_HeightMap](docu/240109_HeightMap.md)
 
 1. tile map 그리기
 2. tile map의 특정위치의 높이 값 받아오기
 3. 특정위치 높이 값에 대한 DebugLine 만들기 (구현파일 그대로 받아옴)
 
-- [content_diff]()
+- [content_diff](https://github.com/VaVamVa/DX3D/commit/90c84a9b2a1e2f51aa9d7b9a231c2b108c903e52)
