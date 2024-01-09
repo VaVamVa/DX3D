@@ -121,3 +121,16 @@
 1. Cylinder : 3차원 원기둥 
 
 - [content_diff](https://github.com/VaVamVa/DX3D/commit/0ca95eebd569bc3975076056b49a110fa0d56d52)
+
+<br>
+
+
+## 8. 240109
+
+#### [240109](docu/240109_HeightMap.md)
+
+1. tile map 그리기
+2. tile map의 특정위치의 높이 값 받아오기
+3. 특정위치 높이 값에 대한 DebugLine 만들기 (구현파일 그대로 받아옴)
+
+- [content_diff]()
