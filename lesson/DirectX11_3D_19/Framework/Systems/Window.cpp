@@ -86,6 +86,7 @@ WPARAM Window::Run(IExecute* main)
 
 	GUI::Create();
 	Context::Create();
+	DebugLine::Create();
 
 	mainExecute->Initialize();  // 선생님이 만든 인터페이스. 각 게임에서 받아서 쓰면, update, render 등의 동작을 수행해준다.
 
@@ -107,6 +108,7 @@ WPARAM Window::Run(IExecute* main)
 	}
 	mainExecute->Destroy();
 
+	DebugLine::Delete();
 	Context::Delete();
 	GUI::Delete();
 
@@ -166,6 +168,7 @@ void Window::MainRender()
 
 	GUI::Get()->Update();
 	Context::Get()->Update();  // viewport, projection 관리
+	DebugLine::Get()->Update();
 	mainExecute->Update();
 
 	mainExecute->PreRender();
@@ -178,6 +181,7 @@ void Window::MainRender()
 		Context::Get()->Render();
 
 		mainExecute->Render();
+		DebugLine::Get()->Render();
 
 		mainExecute->PostRender();
 		GUI::Get()->Render();

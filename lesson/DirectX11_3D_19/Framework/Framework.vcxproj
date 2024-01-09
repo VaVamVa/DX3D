@@ -149,6 +149,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="Environment\Terrain.h" />
     <ClInclude Include="Framework.h" />
     <ClInclude Include="Meshes\Cube.h" />
     <ClInclude Include="Meshes\Cylinder.h" />
@@ -159,6 +160,7 @@
     <ClInclude Include="Renders\Buffers\IndexBuffer.h" />
     <ClInclude Include="Renders\Buffers\VertexBuffer.h" />
     <ClInclude Include="Renders\Context.h" />
+    <ClInclude Include="Renders\DebugLine.h" />
     <ClInclude Include="Renders\Shader.h" />
     <ClInclude Include="Renders\Texture.h" />
     <ClInclude Include="Renders\VertexLayouts.h" />
@@ -181,6 +183,7 @@
     <ClInclude Include="View\Viewport.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="Environment\Terrain.cpp" />
     <ClCompile Include="Framework.cpp" />
     <ClCompile Include="Meshes\Cube.cpp" />
     <ClCompile Include="Meshes\Cylinder.cpp" />
@@ -191,6 +194,7 @@
     <ClCompile Include="Renders\Buffers\IndexBuffer.cpp" />
     <ClCompile Include="Renders\Buffers\VertexBuffer.cpp" />
     <ClCompile Include="Renders\Context.cpp" />
+    <ClCompile Include="Renders\DebugLine.cpp" />
     <ClCompile Include="Renders\Shader.cpp" />
     <ClCompile Include="Renders\Texture.cpp" />
     <ClCompile Include="Systems\Graphics.cpp" />

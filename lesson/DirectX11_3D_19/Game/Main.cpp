@@ -14,12 +14,13 @@
 #include "Demo/Texture/01_TextureDemo.h"
 #include "Demo/Texture/02_TextureSamplerDemo.h"
 #include "Demo/Texture/03_TextureLoadDemo.h"
-*/
-
 #include "Demo/Mesh/01_CubeDemo.h"
 #include "Demo/Mesh/02_MeshDemo.h"
 #include "HW/Mesh/02_SolarSystemHW.h"
 #include "Demo/Task/SolarSystem.h"
+*/
+#include "Demo/Terrain/01_HeightMapDemo.h"
+#include "Demo/Terrain/02_GetHeightDemo.h"
 
 #pragma endregion
 
@@ -37,8 +38,10 @@ void Main::Initialize()
 	*/
 	//Push(new CubeDemo);
 	//Push(new MeshDemo);
-	Push(new SolarSystemHW);
+	//Push(new SolarSystemHW);
 	//Push(new SolarSystem);
+	//Push(new HeightMapDemo);
+	Push(new GetHeightDemo);
 }
 
 void Main::Ready()

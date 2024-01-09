@@ -105,6 +105,12 @@
     <ClInclude Include="Meshes\Cylinder.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
+    <ClInclude Include="Environment\Terrain.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="Renders\DebugLine.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Framework.cpp">
@@ -186,6 +192,12 @@
       <Filter>소스 파일</Filter>
     </ClCompile>
     <ClCompile Include="Meshes\Cylinder.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="Environment\Terrain.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="Renders\DebugLine.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
   </ItemGroup>

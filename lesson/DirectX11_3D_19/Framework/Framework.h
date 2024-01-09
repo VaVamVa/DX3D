@@ -88,6 +88,7 @@ typedef INT64 int64;
 #include "Renders/Texture.h"
 #include "Renders/VertexLayouts.h"
 #include "Renders/Context.h"
+#include "Renders/DebugLine.h"
 
 #include "Renders/Buffers/VertexBuffer.h"
 #include "Renders/Buffers/IndexBuffer.h"
@@ -102,6 +103,8 @@ typedef INT64 int64;
 #include "Meshes/Grid.h"
 #include "Meshes/Sphere.h"
 #include "Meshes/Cylinder.h"
+
+#include "Environment/Terrain.h"
 
 extern HWND handle;
 
